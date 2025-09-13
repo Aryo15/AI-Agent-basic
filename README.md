@@ -9,7 +9,7 @@ The agent's logic is served via a **FastAPI** backend, fulfilling the core proje
 * **Agentic RAG Workflow:** Instead of a simple "retrieve-then-generate" pipeline, this agent uses a LangGraph graph to create a cyclical reasoning loop.
 * **Relevance Grading:** The agent retrieves documents and then uses an LLM to "grade" their relevance to the query before deciding whether to use them. This significantly improves response precision and reduces hallucinations.
 * **API-Ready:** The entire agent workflow is wrapped in a robust FastAPI server, ready for integration.
-* **Interactive Prototype:** A full Google Colab notebook (`Agent_Prototype.ipynb`) is included to demonstrate the development, testing, and execution of the agent step-by-step.
+* **Interactive Prototype:** A full Google Colab notebook (`run.ipynb`) is included to demonstrate the development, testing, and execution of the agent step-by-step.
 
 ## Agent Architecture
 
@@ -34,7 +34,7 @@ The agent operates as a state machine defined in LangGraph:
 
 This repository contains two primary components:
 
-1.  **`Agent_Prototype.ipynb`**: A Google Colab notebook that serves as the interactive "workbench." Use this to understand how the agent is built, test individual components, and experiment with the logic.
+1.  **`run.ipynb`**: A Google Colab notebook that serves as the interactive "workbench." Use this to understand how the agent is built, test individual components, and experiment with the logic.
 2.  **`main.py`**: The final, production-ready Python application. This single file contains all the code needed to initialize the knowledge base, define the agent, and run the FastAPI server. This file is generated and exported from the Colab notebook.
 
 ---
@@ -49,13 +49,10 @@ This repository contains two primary components:
 ### Local Setup
 
 1.  **Clone the repository (or download the files):**
-    ```bash
-    git clone [https://github.com/your-repo/marketing-agent.git](https://github.com/your-repo/marketing-agent.git)
-    cd marketing-agent
-    ```
+
 
 2.  **Install dependencies:**
-    (A `requirements.txt` file is included in the GitHub repo from the original prompt, or you can install manually)
+    (can install manually)
     ```bash
     pip install "langgraph" "langchain" "langchain_openai" "chromadb" "fastapi" "uvicorn[standard]" "python-dotenv" "beautifulsoup4" "lxml"
     ```
